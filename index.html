@@ -2,10 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  
-  <title>Document</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+  <title>Honor Guard</title>
 </head>
 <body>
-  되려나??????
+  의장대 신병 가이드
+
+
+
+
+
+
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js")
+      .then(() => console.log("Service Worker 등록 성공"))
+      .catch(err => console.log("SW 등록 실패", err));
+  }
+</script>
 </body>
 </html>
