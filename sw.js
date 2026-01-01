@@ -1,4 +1,4 @@
-const CACHE_NAME = "guard-cache-v9"; // 🔥 버전 올림 (중요)
+const CACHE_NAME = "guard-cache-v9"; 
 
 /* 캐시할 파일 목록 */
 const urlsToCache = [
