@@ -1,0 +1,56 @@
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #111;
+    color: #eee;
+    margin: 0;
+    padding: 30px;
+}
+
+/* 버튼 영역 */
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #222;
+    color: #eee;
+    border: 1px solid #444;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* 카드 */
+.card {
+    max-width: 400px;
+    border: 1px solid #444;
+    padding: 20px;
+    display: none;
+    background-color: #1a1a1a;
+}
+
+.card h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.member {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dotted #333;
+    font-size: 14px;
+}
+
+.rank {
+    color: #aaa;
+}
