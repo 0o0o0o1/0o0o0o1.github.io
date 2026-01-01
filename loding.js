@@ -1,10 +1,23 @@
-setTimeout(() => {
+window.addEventListener("load", () => {
   const loading = document.getElementById("loading-screen");
-  loading.style.opacity = "0";
-  loading.style.transition = "opacity 0.8s ease";
+  const main = document.querySelector(".container");
+
+  // 안전장치
+  if (!loading || !main) return;
+
+  // 메인은 일단 안 보이게
+  main.style.visibility = "hidden";
+
+  // 로딩 유지 시간
+  const LOADING_TIME = 2500;
 
   setTimeout(() => {
-    loading.style.display = "none";
-    // 여기서 메인 페이지 표시
-  }, 800);
-}, 3000); // 3초 로딩
+    loading.style.opacity = "0";
+    loading.style.transition = "opacity 0.8s ease";
+
+    setTimeout(() => {
+      loading.style.display = "none";
+      main.style.visibility = "visible";
+    }, 800);
+  }, LOADING_TIME);
+});
