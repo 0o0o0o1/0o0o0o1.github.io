@@ -9,6 +9,12 @@
   <title>Honor Guard</title>
 </head>
 <body>
+
+   <div id="loading-screen">
+    <img src="tiger-logo.png" class="logo" />
+    <div class="loading-text">INITIALIZING</div>
+  </div>
+
   <div class="container">
     <h1>의장대 내부 앱</h1>
 
@@ -26,6 +32,20 @@
 
 
   <script>
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const loading = document.getElementById("loading-screen");
+        loading.style.opacity = "0";
+        loading.style.transition = "opacity 0.8s ease";
+
+        setTimeout(() => {
+          loading.style.display = "none";
+          document.getElementById("main-content").style.display = "block";
+        }, 800);
+      }, 2500);
+    });
+
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/keen-web/sw.js")
       .then(() => console.log("Service Worker 등록 성공"))
