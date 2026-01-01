@@ -10,6 +10,16 @@
   justify-content: center;
   align-items: center;
 }
+#loading-screen img {
+  width: 70vw;          /* 가로 기준 */
+  max-width: 220px;    /* PC 폭 제한 */
+  
+  max-height: 45vh;    /* 🔥 핵심: 세로 제한 */
+  height: auto;
+
+  object-fit: contain;
+}
+
 
 /* 로고 */
 .logo {
