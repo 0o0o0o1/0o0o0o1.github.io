@@ -1,11 +1,15 @@
-const CACHE_NAME = "guard-cache-v4";
+const CACHE_NAME = "guard-cache-v5";
 
 /* 캐시할 파일 목록 */
 const urlsToCache = [
   "/keen-web/",
   "/keen-web/index.html",
   "/keen-web/index.css",
-
+  
+  "/keen-web/loding.html",
+  "/keen-web/loding.css",
+  "/keen-web/loding.js"
+  
   "/keen-web/rule.html",
   "/keen-web/terms.html",
   "/keen-web/calendar.html",
