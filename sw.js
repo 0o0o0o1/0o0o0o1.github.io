@@ -1,15 +1,18 @@
-const CACHE_NAME = "guard-cache-v2";
+const CACHE_NAME = "guard-cache-v3";
 
 /* 캐시할 파일 목록 */
 const urlsToCache = [
   "/keen-web/",
   "/keen-web/index.html",
-  "/keen-web/style.css",
+  "/keen-web/index.css",
 
   "/keen-web/rule.html",
   "/keen-web/terms.html",
   "/keen-web/calendar.html",
-  "/keen-web/team.html"
+  
+  "/keen-web/team.html",
+  "/keen-web/team.css",
+  "/keen-web/team.js"
 ];
 
 /* 설치 단계 */
