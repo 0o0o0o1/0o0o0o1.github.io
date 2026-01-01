@@ -6,7 +6,6 @@ const urlsToCache = [
   "/keen-web/index.html",
   "/keen-web/index.css",
   
-  "/keen-web/loding.html",
   "/keen-web/loding.css",
   "/keen-web/loding.js"
   
