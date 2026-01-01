@@ -1,14 +1,15 @@
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const loading = document.getElementById("loading-screen");
   const main = document.querySelector(".container");
 
-  // 안전장치
-  if (!loading || !main) return;
+  if (!loading || !main) {
+    console.error("로딩 요소 못 찾음");
+    return;
+  }
 
-  // 메인은 일단 안 보이게
+  // 메인 숨기기
   main.style.visibility = "hidden";
 
-  // 로딩 유지 시간
   const LOADING_TIME = 2500;
 
   setTimeout(() => {
