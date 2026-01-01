@@ -32,15 +32,24 @@
 
 
 
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.getRegistrations().then(regs => {
+      for (let reg of regs) {
+        reg.unregister();
+      }
+    });
+  }
+</script>
 
-  <script>
+  <!-- <script>
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/keen-web/sw.js")
       .then(() => console.log("Service Worker 등록 성공"))
       .catch(err => console.log("SW 등록 실패", err));
   }
-</script>
+</script> -->
   <script src="loading.js"></script>
 </body>
 </html>
