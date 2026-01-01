@@ -44,3 +44,6 @@ self.addEventListener("fetch", event => {
     })
   );
 });
+self.addEventListener('install', event => {
+  self.skipWaiting();  // 새 서비스 워커가 바로 활성화되도록
+});
