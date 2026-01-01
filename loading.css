@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} 
 
 /* 로딩 로고 (호랑이 마크) */
 #loading-screen img {
