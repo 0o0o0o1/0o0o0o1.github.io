@@ -35,24 +35,12 @@
 
   <script>
 
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        const loading = document.getElementById("loading-screen");
-        loading.style.opacity = "0";
-        loading.style.transition = "opacity 0.8s ease";
-
-        setTimeout(() => {
-          loading.style.display = "none";
-          document.getElementById("main-content").style.display = "block";
-        }, 800);
-      }, 2500);
-    });
-
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/keen-web/sw.js")
       .then(() => console.log("Service Worker 등록 성공"))
       .catch(err => console.log("SW 등록 실패", err));
   }
 </script>
+  <script src="loading.js"></script>
 </body>
 </html>
