@@ -1,25 +1,26 @@
-7const CACHE_NAME = "guard-cache-v8";
+const CACHE_NAME = "guard-cache-v9"; // 🔥 버전 올림 (중요)
 
 /* 캐시할 파일 목록 */
 const urlsToCache = [
   "/keen-web/",
   "/keen-web/index.html",
   "/keen-web/index.css",
-  
-  "/keen-web/loding.css",
-  "/keen-web/loding.js"
-  
+
+  "/keen-web/loading.css",
+  "/keen-web/loading.js",
+
   "/keen-web/rule.html",
   "/keen-web/terms.html",
   "/keen-web/calendar.html",
-  
+
   "/keen-web/team.html",
   "/keen-web/team.css",
   "/keen-web/team.js"
 ];
 
-/* 설치 단계 */
+/* 설치 */
 self.addEventListener("install", event => {
+  self.skipWaiting(); // 즉시 활성화
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(urlsToCache);
@@ -27,7 +28,7 @@ self.addEventListener("install", event => {
   );
 });
 
-/* 🔥 활성화 단계: 이전 캐시 전부 삭제 */
+/* 활성화 */
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -42,14 +43,13 @@ self.addEventListener("activate", event => {
   );
 });
 
-/* 요청 가로채기 */
+/* fetch: HTML/JS는 항상 최신 우선 */
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
+    fetch(event.request)
+      .then(response => {
+        return response;
+      })
+      .catch(() => caches.match(event.request))
   );
-});
-self.addEventListener('install', event => {
-  self.skipWaiting();  // 새 서비스 워커가 바로 활성화되도록
 });
