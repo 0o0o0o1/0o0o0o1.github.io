@@ -5,7 +5,7 @@
     "title": "대대 의장 행사",
     "type": "official",
     "time": "08:30",
-    "uniform": "정복",
+    "uniform": "행사복",
     "place": "대대 연병장",
     "memo": "07:50까지 집결"
   },
@@ -16,6 +16,6 @@
     "type": "training",
     "time": "09:00",
     "uniform": "전투복",
-    "place": "교육대"
+    "place": "의장대현관"
   }
 ]
