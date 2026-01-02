@@ -3,7 +3,7 @@ const id = Number(params.get("id"));
 
 fetch("events.json")
   .then(res => res.json())
-  .then(events => {
+  .then(events => { 
     const ev = events.find(e => e.id === id);
     if (!ev) return;
 
