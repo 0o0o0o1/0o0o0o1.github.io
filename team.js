@@ -10,7 +10,7 @@ buttons.forEach(button => {
 
     // 모든 모달 닫기 + 버튼 비활성화
     modals.forEach(modal => modal.classList.remove('active'));
-    buttons.forEach(btn => btn.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active')); 
 
     if (!isActive) {
       // 클릭한 모달 열기 + 버튼 활성화
