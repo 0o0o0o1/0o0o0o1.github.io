@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 안전 체크
   if (!loading || !main) {
     console.error("로딩 또는 메인 요소 없음");
-    return;
+    return; 
   }
 
   // 메인 완전히 숨기기
