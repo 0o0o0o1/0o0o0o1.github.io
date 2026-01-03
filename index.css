@@ -47,3 +47,19 @@ h1 {
 .menu-card:hover {
   background-color: #333;
 }
+.music-btn {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  background: #1e1e1e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid #333;
+}
