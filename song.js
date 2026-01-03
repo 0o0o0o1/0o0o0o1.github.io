@@ -27,6 +27,6 @@ document.querySelectorAll(".song p").forEach(line => {
   line.onclick = () => {
     const time = Number(line.dataset.time);
     player.currentTime = time;
-    player.load();
+    player.play();
   };
 });
