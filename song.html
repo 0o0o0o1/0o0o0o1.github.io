@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>군가</title>
+  <link rel="stylesheet" href="song.css" />
+  <script src="song.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+  <h1>🎵 군가</h1>
+
+  <div class="song-tabs">
+    <button class="tab active" data-song="song1">의장대가</button>
+    <button class="tab" data-song="song2">육군가</button>
+    <button class="tab" data-song="song3">전우가</button>
+  </div>
+
+  <audio id="player" controls></audio>
+
+  <div class="lyrics">
+
+    <div class="song active" id="song1">
+      <p data-time="0">의장대의 기상은 하늘을 찌르고</p>
+      <p data-time="10">강철 같은 의지로 오늘도 선다</p>
+      <p data-time="20">나라의 명예를 두 어깨에 메고</p>
+    </div>
+
+    <div class="song" id="song2">
+      <p data-time="0">백두의 정기 이어받아</p>
+      <p data-time="8">조국 수호의 방패 되어</p>
+    </div>
+
+    <div class="song" id="song3">
+      <p data-time="0">전우야 잘 자라</p>
+      <p data-time="7">내일은 다시 싸우리라</p>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
