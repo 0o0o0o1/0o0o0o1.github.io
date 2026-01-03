@@ -3,9 +3,9 @@ const songs = document.querySelectorAll(".song");
 const player = document.getElementById("player");
 
 const audioMap = {
-  song1: "audio/song1.mp3",
-  song2: "audio/song2.mp3",
-  song3: "audio/song3.mp3"
+  song1: "/audio/song1.mp3",
+  song2: "/audio/song2.mp3",
+  song3: "/audio/song3.mp3"
 };
 
 tabs.forEach(tab => {
