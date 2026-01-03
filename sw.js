@@ -1,4 +1,4 @@
-const CACHE_NAME = "guard-cache-v17"; 
+const CACHE_NAME = "guard-cache-v18"; 
 
 /* 캐시할 파일 목록 */
 const urlsToCache = [
