@@ -18,7 +18,7 @@ tabs.forEach(tab => {
 
     player.src = audioMap[tab.dataset.song];
     player.currentTime = 0;
-    player.play();
+    player.load();
   };
 });
 
@@ -27,6 +27,6 @@ document.querySelectorAll(".song p").forEach(line => {
   line.onclick = () => {
     const time = Number(line.dataset.time);
     player.currentTime = time;
-    player.play();
+    player.load();
   };
 });
