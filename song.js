@@ -19,6 +19,7 @@ tabs.forEach(tab => {
     player.src = audioMap[tab.dataset.song];
     player.currentTime = 0;
     player.load();
+    player.play(); // ← 탭 누르면 바로 재생 (원하면 제거 가능)
   };
 });
 
@@ -29,4 +30,10 @@ document.querySelectorAll(".song p").forEach(line => {
     player.currentTime = time;
     player.play();
   };
+});
+
+// ✅ 페이지 처음 들어왔을 때 song1 준비
+window.addEventListener("DOMContentLoaded", () => {
+  player.src = audioMap["song1"];
+  player.load();
 });
