@@ -37,3 +37,19 @@ window.addEventListener("DOMContentLoaded", () => {
   player.src = audioMap["song1"];
   player.load();
 });
+
+
+player.ontimeupdate = () => {
+  const current = player.currentTime;
+
+  document.querySelectorAll(".song.active p").forEach(p => {
+    const time = Number(p.dataset.time);
+
+    if (current >= time && current < time + 4) {
+      p.classList.add("active");
+    } else {
+      p.classList.remove("active");
+    }
+  });
+};
+
