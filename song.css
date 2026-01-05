@@ -64,3 +64,15 @@ audio {
 .song p:active {
   background: #333;
 }
+.song p {
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.song p.active {
+  background: #333;
+  color: #00ffcc;
+  font-weight: bold;
+}
+
