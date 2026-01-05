@@ -1,47 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <link rel="/manifest" href="manifest.json">
-  <meta name="theme-color" content="#000000">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Honor Guard</title>
-
-  <!-- 메인 / 로딩 CSS -->
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="loading.css" />
+  <title>Honor Guard</title>
 </head>
+
 <body>
-
-  <!-- 🔥 로딩 화면 -->
-  <div id="loading-screen">
-    <img src="tiger-logo.png" alt="logo">
-  </div>
-
-  <!-- 메인 화면 -->
   <div class="container">
     <h1>의장대 내부 앱</h1>
 
     <div class="menu-grid">
       <a href="rule.html" class="menu-card">의장대 룰</a>
-      <a href="terms.html" class="menu-card">의장대 용어</a>
       <a href="calendar.html" class="menu-card">행사 캘린더</a>
       <a href="team.html" class="menu-card">분대별 편성</a>
+      <a href="song.html" class="menu-card">군가</a>
     </div>
   </div>
-  <a href="song.html" class="music-btn">🎵</a>
 
-  
-  <!-- 🔥 로딩 JS -->
-  <script src="loading.js"></script>
-
-  <!-- Service Worker -->
   <script>
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("sw.js");
+      navigator.serviceWorker.register("/keen-web/sw.js")
+        .then(() => console.log("Service Worker 등록 성공"))
+        .catch(err => console.log("SW 등록 실패", err));
     }
   </script>
-
 </body>
 </html>
