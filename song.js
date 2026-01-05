@@ -8,48 +8,68 @@ const audioMap = {
   song3: "/audio/song3.m4a"
 };
 
+// 탭 클릭
 tabs.forEach(tab => {
   tab.onclick = () => {
+    // 탭 초기화
     tabs.forEach(t => t.classList.remove("active"));
-    songs.forEach(s => s.classList.remove("active"));
+
+    // 가사 + 하이라이트 초기화
+    songs.forEach(s => {
+      s.classList.remove("active");
+      s.querySelectorAll("p").forEach(p => p.classList.remove("active"));
+    });
 
     tab.classList.add("active");
-    document.getElementById(tab.dataset.song).classList.add("active");
 
-    player.src = audioMap[tab.dataset.song];
+    const songId = tab.dataset.song;
+    const songEl = document.getElementById(songId);
+    songEl.classList.add("active");
+
+    player.src = audioMap[songId];
     player.currentTime = 0;
     player.load();
-    player.play(); // ← 탭 누르면 바로 재생 (원하면 제거 가능)
-  };
-});
-
-// 가사 클릭 → 해당 시간 재생
-document.querySelectorAll(".song p").forEach(line => {
-  line.onclick = () => {
-    const time = Number(line.dataset.time);
-    player.currentTime = time;
     player.play();
   };
 });
 
-// ✅ 페이지 처음 들어왔을 때 song1 준비
+// 가사 클릭 → 해당 시간 이동
+document.querySelectorAll(".song p").forEach(line => {
+  line.onclick = () => {
+    player.currentTime = Number(line.dataset.time);
+    player.play();
+  };
+});
+
+// 첫 진입 시 song1 세팅
 window.addEventListener("DOMContentLoaded", () => {
+  tabs[0].classList.add("active");
+  songs[0].classList.add("active");
   player.src = audioMap["song1"];
   player.load();
 });
 
-
-player.ontimeupdate = () => {
+// ⭐ 하이라이트 핵심 로직
+function updateLyrics() {
   const current = player.currentTime;
+  const activeSong = document.querySelector(".song.active");
+  if (!activeSong) return;
 
-  document.querySelectorAll(".song.active p").forEach(p => {
-    const time = Number(p.dataset.time);
+  const lines = activeSong.querySelectorAll("p");
 
-    if (current >= time && current < time + 4) {
-      p.classList.add("active");
+  lines.forEach((line, index) => {
+    const start = Number(line.dataset.time);
+    const next = lines[index + 1]
+      ? Number(lines[index + 1].dataset.time)
+      : Infinity;
+
+    if (current >= start && current < next) {
+      line.classList.add("active");
     } else {
-      p.classList.remove("active");
+      line.classList.remove("active");
     }
   });
-};
+}
 
+player.addEventListener("timeupdate", updateLyrics);
+player.addEventListener("play", updateLyrics);
